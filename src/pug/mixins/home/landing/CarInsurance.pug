@@ -1,0 +1,143 @@
+append variables
+  -
+    var insurance= [
+      {
+        image:'car.png',
+        hoverImage:'car-hover.png',
+      },
+      {
+        image:'home.png',
+        hoverImage:'home-hover.png',
+      },
+      {
+        image: 'paw.png',
+        hoverImage: 'paw-hover.png',
+      },
+      {
+        image: 'plane.png',
+        hoverImage: 'plane-hover.png',
+      },
+     
+    ];
+  -
+    var services = [
+      {
+        icon:'support.png',
+        title:'24x7 Support',
+        text:`Round-the-clock assistance to ensure customers can reach out anytime with questions or concerns.`,
+      },
+      {
+        icon:'edit.png',
+        title:'Emergency Response',
+        text:`Swift and immediate solutions for urgent issues, ensuring minimal downtime or inconvenience.`
+      },
+      {
+        icon:'money.png',
+        title:'On-Site Visits',
+        text:` Providing technicians or experts who can visit the customer's location for direct support, maintenance, or troubleshooting`,
+      },
+      {
+        icon:'security.png',
+        title:'Scheduled Maintenance',
+        text:'Regularly planned check-ups or updates, ensuring systems or services remain optimal and prevent potential problems before they arise.',
+      },
+    
+    ] ;
+
+  -
+    var content = [
+      {
+        image:'car.png',
+        title:'Shower Repair & Installation',
+        textOne:`Our expert team offers precision shower installations, blending quality materials with modern design.`,
+        textTwo:`Focused on efficiency, safety, and space optimization, our services not only elevate your bathroom experience but also add value to your home.`,
+      },
+      {
+        image:'home.png',
+        title:'Pipe Repair & Installation',
+        textOne:`Our team excels in pipe repair and installation, combining efficiency with quality materials to ensure durable solutions and uninterrupted water flow.`,
+        textTwo:`We're dedicated to preserving your property's plumbing integrity.`,
+      },
+      {
+        image:'pets.png',
+        title:'Heater Repair & Installation',
+        textOne:`Our team specializes in expert heater installation, prioritizing optimal performance, energy efficiency, and system longevity.`,
+        textTwo:`By choosing our services, you're investing in lasting comfort and a heating solution tailored to meet the unique demands of your space, backed by our commitment to excellence.`,
+      },
+      {
+        image:'travel.png',
+        title:'Latrine Repair & Installation',
+        textOne:`Offering expert latrine repair and installation services, we prioritize hygiene, functionality, and durability.`,
+        textTwo:`Trust our experienced team to deliver solutions tailored to your specific needs, ensuring both comfort and compliance with industry standards.`,
+      },
+    ] ;  
+
+mixin Service(config)
+  .col-sm-6.col-lg-4.mb-6.text-center.text-sm-start
+    img.shadow-icon(src=`${CWD}assets/img/icons/${config.icon}` height='60' alt='...')
+    h6.mt-2.fw-normal.text-200=config.title
+    p.text-400.mb-md-0!=config.text
+
+mixin Icons(config)
+  .icon-box
+    img.car-insurance-icon(src=`${CWD}assets/img/icons/${config.image}`   alt='...' )  
+    img.car-insurance-icon.car-insurance-icon-hover(src=`${CWD}assets/img/icons/${config.hoverImage}`  alt='...' )
+
+mixin TabContent(config)
+  .col-md-6.col-xl-4.order-1.order-md-0
+    h2.text-light.mb-md-5=config.title
+    p.text-400!=config.textOne
+    p.text-400.mt-3!=config.textTwo
+    a.btn.btn-primary.btn-ensurance.mt-5(href='#!')
+      span.fas.fa-chevron-right.fa-xs.btn-icon
+      span.btn-text Learn more
+    //- a.btn.btn-primary.btn-ensurance.my-md-5(href='#!')
+    //-   span.fas.fa-chevron-right.fa-xs.btn-icon
+    //-   span.btn-text Learn more  
+  .col-md-6.col-xl-8.text-end
+    .img-shape
+      img.feature-img(src=`${CWD}assets/img/gallery/${config.image}` alt='...')
+
+mixin CarInsurance
+  section#products
+    +Background({ image: `${CWD}assets/img/illustrations/bg-car-insurance.png`, attrs: { style: { 'background-position': '0 200px', 'background-size': '100% 45%'} }, className: 'd-none d-md-block' })
+    +Background({ image: `${CWD}assets/img/illustrations/bg-left.png`, attrs: { style: { 'background-position': 'left', 'background-size': '15% 100%'} }, className: 'd-none d-md-block' })
+    +Background({ image: `${CWD}assets/img/illustrations/circle.png`, attrs: { style: { 'background-position': '18% 49%;', 'background-size': 'auto'} }, className: 'd-none d-xl-block  mt-11' })
+    .container-lg
+      .row.flex-center.py-8.py-md-10
+        .col-12.mt-6
+          .d-flex.align-items-start
+            .nav.flex-column.nav-tab#nav-tab(role='tablist' aria-orientation='vertical')
+              a.circle-hover-wrapper.nav-link.mb-lg-4.active#nav-car-tab( href="#!" data-bs-toggle='tab' data-bs-target='#nav-car'  role='tab' aria-controls='nav-car' aria-selected='true') 
+                +Icons(insurance[0])
+                 
+              a.circle-hover-wrapper.nav-link.mb-lg-4#nav-home-tab(  href="#!" data-bs-toggle='tab' data-bs-target='#nav-home'  role='tab' aria-controls='nav-home' aria-selected='false') 
+                +Icons(insurance[1])
+
+              a.circle-hover-wrapper.nav-link.mb-lg-4#nav-paw-tab(  href="#!" data-bs-toggle='tab' data-bs-target='#nav-paw'  role='tab' aria-controls='nav-paw' aria-selected='false') 
+                +Icons(insurance[2])
+
+              a.circle-hover-wrapper.nav-link.mb-lg-4#nav-plane-tab(  href="#!" data-bs-toggle='tab' data-bs-target='#nav-plane'  role='tab' aria-controls='nav-plane' aria-selected='false') 
+                +Icons(insurance[3])
+                  
+            .tab-content#nav-tabContent.w-100
+              .tab-pane.fade.show.active#nav-car(role='tabpanel' aria-labelledby='nav-car-tab') 
+                .row.align-items-center.offset-sm-1.g-3
+                  +TabContent(content[0])
+              .tab-pane.fade#nav-home(role='tabpanel' aria-labelledby='nav-home-tab') 
+                .row.align-items-center.offset-sm-1.g-3
+                  +TabContent(content[1])
+              .tab-pane.fade#nav-paw(role='tabpanel' aria-labelledby='nav-paw-tab')
+                .row.align-items-center.offset-sm-1.g-3 
+                  +TabContent(content[2])
+              .tab-pane.fade#nav-plane(role='tabpanel' aria-labelledby='nav-plane-tab') 
+                .row.align-items-center.offset-sm-1.g-3
+                  +TabContent(content[3])
+
+      .row.offset-xl-2
+        .col-12
+          .mb-3.mb-md-5
+            h2.text-light.mb-7.text-center.text-sm-start Our services at a glance
+          .row
+            each service in services 
+              +Service(service)                    

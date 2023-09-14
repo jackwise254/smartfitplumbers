@@ -1,0 +1,54 @@
+mixin Footer 
+	+Section.py-0.bg-black
+		.row.justify-content-md-between.justify-content-evenly.py-4
+			.col-12.col-sm-8.col-md-6.col-lg-auto.text-center.text-md-start 
+				p.fs--1.my-2.fw-light.text-200 All rights Reserved &copy; smartfitplumbers, 2023
+			.col-12.col-sm-8.col-md-6
+				p.fs--1.fw-light.my-2.text-center.text-md-end.text-200  Design
+		
+					|&nbsp;by&nbsp;
+					a(href='https://wesanza.netlify.app/' target='_blank').fw-bold.text-primary Wesanza
+
+mixin PreFooter
+	+Section.py-0 
+		.row
+			.col 
+				.d-md-flex.justify-content-between.pb-1.pt-4
+					.pb-4
+						ul.widget-list.d-flex.flex-wrap.justify-content-center.justify-content-md-start
+							li
+								a.widget-list-link.fs-ms(href='#') Home
+							li.ms-4
+								a.widget-list-link.fs-ms(href='#') About Us
+							li.ms-4
+								a.widget-list-link.fs-ms(href='#') Projects
+							li.ms-4
+								a.widget-list-link.fs-ms(href='#') Services
+					.pb-4
+						ul.list-unstyled.list-inline.my-2
+							li.list-inline-item
+								a.text-decoration-none(href='#!')
+									i.fab.fa-facebook-square.fa-2x.social-icons
+							li.list-inline-item
+								a.text-decoration-none(href='#!')
+									i.fab.fa-instagram.fa-2x.social-icons
+							li.list-inline-item
+								a.text-decoration-none(href='#!')
+									i.fab.fa-twitter-square.fa-2x.social-icons 			
+							li.list-inline-item
+								a.text-decoration-none(href='#!')
+									i.fab.fa-linkedin.fa-2x.social-icons
+	+Footer
+
+
+
+
+
+
+
+
+
+
+
+
+

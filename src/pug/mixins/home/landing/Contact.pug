@@ -1,0 +1,44 @@
+mixin Contact
+  +Section#contact 
+    .row
+      h2.text-light.text-center.mb-8 Contact Us
+      .col-12.col-lg-4.col-xl-5.mb-4.order-0.order-sm-0
+        a.navbar-brand(href='index.html')
+          span.text-secondary.fs-3.ms-2.fw-bolder.smartfit-bg SmartFit
+          span.text-danger.fs-3.ms-2.fw-bolder Plumbers
+        p.text-light.my-4 
+          i.fas.fa-map-marker-alt.me-3
+          span.text-light Ngong Racecourse  &nbsp;
+          br
+          br
+          |
+          i.fas.fa-map-alt.me-3
+          span.text-light Nairobi, Kenya  &nbsp;
+       
+        p.text-light 
+          i.fas.fa-envelope.me-3.text-primary 
+          a(href='mailto:info@smarfitplumbers.co.ke') info@smarfitplumbers.co.ke 
+
+        p.text-light 
+          i.fas.fa-phone-alt.me-3.text-primary 
+          a(href='tel:+2547188 160 70') (+254) 7188 160 70 (Support)
+
+      .col-12.col-lg-6.col-xl-7
+        h3.text-200.my-4
+        .img-shape
+        .rectangle-container
+          .mapouter
+            .gmap_canvas
+              iframe.gmap_iframe(frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&height=400&hl=en&q=ngong racecourse&t=&z=14&ie=UTF8&iwloc=B&output=embed")
+              a(href="https://gachanymph.com/") Gacha Nymph
+        style.
+          .rectangle-container {
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;  /* This line gives the rounded borders */
+          }
+          .mapouter{position:relative;text-align:right;width:630px;height:400px;}
+          .gmap_canvas {overflow:hidden;background:none!important;width:630px;height:400px;}
+          .gmap_iframe {width:630px!important;height:400px!important;}
+
